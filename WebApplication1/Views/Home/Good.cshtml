@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Good";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using WebApplication1.Models
+@using System.Linq
+@model List<Price>
+
+
+<div class="well">
+    <p>
+        <img src="@ViewBag.Picture" width="240" height="146" /> 
+    </p>
+    <h3>
+        <strong>@ViewBag.Name</strong>
+    </h3>
+    <span class="lead">@ViewBag.Description</span>
+</div>
+
+@foreach (var p in Model)
+{                
+        <div class="row">
+            <div class="col-md-4">
+                <p>
+                    <h3>@p.ProductPrice</h3>
+                </p>
+            </div>
+            <div class="col-md-4">
+                <h4>@p.DateAdded</h4>
+            </div>
+        </div>
+}
+
